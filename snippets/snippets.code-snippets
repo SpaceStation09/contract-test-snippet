@@ -1,0 +1,10 @@
+{
+  "getRevertMsg": {
+    "prefix": ["revert", "revertMsg", "getRevertMsg"],
+    "body": [
+      "const getRevertMsg = (msg : string): string =>",
+      "`VM Exception while processing transaction: reverted with reason string '${msg}'`"
+    ],
+    "description": "A function which returns the transaction revert message with EVM-style"
+  }
+}

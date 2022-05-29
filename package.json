@@ -4,6 +4,7 @@
   "description": "Simple snippets which can be used in testing files for smart contracts in Hardhat",
   "version": "1.0.0",
   "icon": "icon.png",
+  "publisher": "SpaceStation09",
   "repository": {
     "type": "git",
     "url": "https://github.com/SpaceStation09/contract-test-snippet"

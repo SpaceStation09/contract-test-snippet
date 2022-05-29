@@ -1,65 +1,66 @@
-# contract-test-snippet README
+# Contract Test Snippet
 
-This is the README for your extension "contract-test-snippet". After writing up a brief description, we recommend including the following sections.
+This is a vscode snippet to help developers to write test files in more convenient way. It includes several commonly used functions.
 
-## Features
+## Language Support
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- typescript
 
-For example if there is an image subfolder under your extension project workspace:
+## Available Snippets
 
-\!\[feature X\]\(images/feature-x.png\)
+### `getRevertMsg`
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+prefix: "revert", "revertMsg", "getRevertMsg"
 
-## Requirements
+```typescript
+const getRevertMsg = (msg: string): string =>
+  `VM Exception while processing transaction: reverted with reason string '${msg}'`;
+```
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### `expectRevert`
 
-## Extension Settings
+prefix: "er", "expectRevert", "revert"
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+```typescript
+await expect().to.be.revertedWith(getRevertMsg("Example Error Msg"));
+```
 
-For example:
+### `takeSnapshot`
 
-This extension contributes the following settings:
+prefix: "takesnapshot", "tsnapshot"
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+```typescript
+async function takeSnapshot() {
+  return network.provider.send("evm_snapshot", []);
+}
+```
 
-## Known Issues
+### `revertToSnapShot`
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+prefix: "rs", "revertsnapshot"
 
-## Release Notes
+```typescript
+async function revertToSnapShot(id: string) {
+  await network.provider.send("evm_revert", [id]);
+}
+```
 
-Users appreciate release notes as you update your extension.
+### `advanceTimeAndBlock`
 
-### 1.0.0
+prefix: "advance", "atb"
 
-Initial release of ...
+```typescript
+async function advanceTimeAndBlock(time: number): Promise<providers.Block> {
+  await advanceTime(time);
+  await advanceBlock();
+  return Promise.resolve(ethers.provider.getBlock("latest"));
+}
+```
 
-### 1.0.1
+## Contribute
 
-Fixed issue #.
+Any contribution is welcomed to make it better.
 
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+If you have any questions, please create an [issue](https://github.com/SpaceStation09/contract-test-snippet/issues).
 
 **Enjoy!**

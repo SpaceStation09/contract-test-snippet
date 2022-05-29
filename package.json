@@ -1,20 +1,25 @@
 {
-    "name": "contract-test-snippet",
-    "displayName": "contract test snippet",
-    "description": "Simple snippet which can be used in testing files for smart contracts",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.67.0"
-    },
-    "categories": [
-        "Snippets"
-    ],
-    "contributes": {
-        "snippets": [
-            {
-                "language": "typescript",
-                "path": "./snippets/snippets.code-snippets"
-            }
-        ]
-    }
+  "name": "contract-test-snippet",
+  "displayName": "Contract Test Snippet",
+  "description": "Simple snippets which can be used in testing files for smart contracts in Hardhat",
+  "version": "1.0.0",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SpaceStation09/contract-test-snippet"
+  },
+  "engines": {
+    "vscode": "^1.67.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
 }

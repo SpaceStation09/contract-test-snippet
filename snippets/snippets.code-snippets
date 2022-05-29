@@ -3,8 +3,46 @@
     "prefix": ["revert", "revertMsg", "getRevertMsg"],
     "body": [
       "const getRevertMsg = (msg : string): string =>",
-      "`VM Exception while processing transaction: reverted with reason string '${msg}'`"
+      "`VM Exception while processing transaction: reverted with reason string '\\${msg}'`;"
     ],
-    "description": "A function which returns the transaction revert message with EVM-style"
+    "description": "A function which returns the transaction revert message in EVM-style"
+  },
+  "expectRevert": {
+    "prefix": ["er", "expectRevert", "revert"],
+    "body": [
+      "await expect(",
+      "\t$0",
+      ").to.be.revertedWith(getRevertMsg(\"Example Error Msg\"));"
+    ],
+    "description": "assertion for fail transaction"
+  },
+  "takeSnapshot": {
+    "prefix": ["takesnapshot", "tsnapshot"],
+    "body": [
+      "async function takeSnapshot() {",
+      "\treturn network.provider.send(\"evm_snapshot\", []);",
+      "}"
+    ],
+    "description": "function for taking snapshot in hardhat test"
+  },
+  "revertToSnapShot": {
+    "prefix": ["rs", "revertsnapshot"],
+    "body": [
+      "async function revertToSnapShot(id: string) {",
+      "\tawait network.provider.send(\"evm_revert\", [id]);",
+      "}"
+    ],
+    "description": "function for revert to snapshot in hardhat test with specified snapshot id"
+  },
+  "advanceTimeAndBlock": {
+    "prefix": ["advance", "atb"],
+    "body": [
+      "async function advanceTimeAndBlock(time: number): Promise<providers.Block> {",
+      "\tawait advanceTime(time);",
+      "\tawait advanceBlock();",
+      "\treturn Promise.resolve(ethers.provider.getBlock(\"latest\"));",
+      "}"
+    ],
+    "description": "function for advance time and block in hardhat test"
   }
 }

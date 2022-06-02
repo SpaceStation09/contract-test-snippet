@@ -1,6 +1,6 @@
 # Contract Test Snippet
 
-This is a vscode snippet to help developers to write test files in more convenient way. It includes several commonly used functions.
+This is a vscode snippet to help developers to write test files in more convenient way (for hardhat framework with ethers.js). It includes several commonly used functions.
 
 ## Language Support
 
@@ -42,6 +42,26 @@ prefix: "rs", "revertsnapshot"
 ```typescript
 async function revertToSnapShot(id: string) {
   await network.provider.send("evm_revert", [id]);
+}
+```
+
+### `advanceTime`
+
+prefix: "advance", "at"
+
+```typescript
+async function advanceTime(time: number) {
+  await network.provider.send("evm_increaseTime", [time]);
+}
+```
+
+### `advanceBlock`
+
+prefix: "advance", "ab"
+
+```typescript
+async function advanceBlock() {
+  await network.provider.send("evm_mine", []);
 }
 ```
 

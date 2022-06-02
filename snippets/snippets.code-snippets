@@ -34,6 +34,24 @@
     ],
     "description": "function for revert to snapshot in hardhat test with specified snapshot id"
   },
+  "advanceTime": {
+    "prefix": ["advance", "at"],
+    "body": [
+      "async function advanceTime(time: number) {",
+      "\tawait network.provider.send(\"evm_increaseTime\", [time]);",
+      "}"
+    ],
+    "description": "function to advance time in hardhat test"
+  },
+  "advanceBlock": {
+    "prefix": ["advance", "ab"],
+    "body": [
+      "async function advanceBlock() {",
+      "\tawait network.provider.send(\"evm_mine\", []);",
+      "}"
+    ],
+    "description": "function to advance block in hardhat test"
+  },
   "advanceTimeAndBlock": {
     "prefix": ["advance", "atb"],
     "body": [
@@ -43,6 +61,6 @@
       "\treturn Promise.resolve(ethers.provider.getBlock(\"latest\"));",
       "}"
     ],
-    "description": "function for advance time and block in hardhat test"
+    "description": "function to advance time and block in hardhat test"
   }
 }

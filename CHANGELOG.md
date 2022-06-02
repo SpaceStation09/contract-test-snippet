@@ -14,4 +14,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Revert transaction expectation code
 - Function to take snapshot in hardhat test
 - Function to revert to snapshot with specified snapshot id
-- Function to advance time and clock in hardhat test
+- Function to advance time and block in hardhat test
+
+## [1.1.0] - 2022-06-02
+
+### Added
+
+- Add function for advance time
+- Add function for advance block

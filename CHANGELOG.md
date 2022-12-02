@@ -22,3 +22,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Add function for advance time
 - Add function for advance block
+
+## [1.2.0] - 2022-12-02
+
+### Added
+
+- Add functions for converting number to hex bytes32
+- Add snippets for new test case creation
+- Add snippets for new test category creation

@@ -62,5 +62,20 @@
       "}"
     ],
     "description": "function to advance time and block in hardhat test"
+  },
+  "numberToBytes32Hex": {
+    "prefix": ["n2b", "number2bytes", "nb"],
+    "body": ["hexZeroPad(hexlify(${1:number}), 32);"],
+    "description": "number to hex bytes32 casting"
+  },
+  "newTestCase": {
+    "prefix": ["it"],
+    "body": ["it(\"\", async () => {})"],
+    "description": "create new test case with keyword `it`"
+  },
+  "newTestCategory": {
+    "prefix": ["describe"],
+    "body": ["describe(\"\", () => {})"],
+    "description": "create new test category with keyword `describe`"
   }
 }

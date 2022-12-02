@@ -77,6 +77,30 @@ async function advanceTimeAndBlock(time: number): Promise<providers.Block> {
 }
 ```
 
+### `numberToBytes32Hex`
+
+prefix: "n2b", "number2bytes", "nb"
+
+```typescript
+hexZeroPad(hexlify(number), 32);
+```
+
+### `newTestCase`
+
+prefix: "it"
+
+```typescript
+it("", async () => {});
+```
+
+### `newTestCategory`
+
+prefix: "describe"
+
+```typescript
+describe("", () => {});
+```
+
 ## Contribute
 
 Any contribution is welcomed to make it better.

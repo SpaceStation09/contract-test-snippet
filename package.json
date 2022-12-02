@@ -2,7 +2,7 @@
   "name": "contract-test-snippet",
   "displayName": "Contract Test Snippet",
   "description": "Simple snippets which can be used in testing files for smart contracts in Hardhat",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "icon": "icon.png",
   "publisher": "SpaceStation09",
   "repository": {

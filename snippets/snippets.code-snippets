@@ -70,12 +70,12 @@
   },
   "newTestCase": {
     "prefix": ["it"],
-    "body": ["it(\"\", async () => {})"],
+    "body": ["it(\"${1:description}\", async () => {$0})"],
     "description": "create new test case with keyword `it`"
   },
   "newTestCategory": {
     "prefix": ["describe"],
-    "body": ["describe(\"\", () => {})"],
+    "body": ["describe(\"${1:description}\", () => {$0})"],
     "description": "create new test category with keyword `describe`"
   }
 }
